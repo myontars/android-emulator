@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [[ $EMULATOR == "" ]]; then
-    EMULATOR="android-19"
+    EMULATOR="android-22"
     echo "Using default emulator $EMULATOR"
 fi
 
@@ -34,5 +34,10 @@ else
     EMU="arm"
 fi
 
-echo "no" | /usr/local/android-sdk/tools/android create avd -f -n test -t ${EMULATOR} --abi default/${ARCH}
+if [ ! -f ~/.android/avd/test.ini ]; then
+   echo "AVD DOES NOT EXISTS CREATING"
+   echo "no" | /usr/local/android-sdk/tools/android create avd -f -n test -t ${EMULATOR} --abi default/${ARCH}
+else
+   echo "AVD HAS EXISTS RUNING!"
+
 echo "no" | /usr/local/android-sdk/tools/emulator64-${EMU} -avd test -noaudio -no-window -gpu off -verbose -qemu -usbdevice tablet -vnc :0
