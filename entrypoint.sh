@@ -39,5 +39,5 @@ if [ ! -f ~/.android/avd/test.ini ]; then
    echo "no" | /usr/local/android-sdk/tools/android create avd -f -n test -t ${EMULATOR} --abi default/${ARCH}
 else
    echo "AVD HAS EXISTS RUNING!"
-
+fi
 echo "no" | /usr/local/android-sdk/tools/emulator64-${EMU} -avd test -noaudio -no-window -gpu off -verbose -qemu -usbdevice tablet -vnc :0
