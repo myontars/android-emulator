@@ -3,7 +3,7 @@
 
 FROM ubuntu
 
-MAINTAINER tracer0tong <yuriy.leonychev@gmail.com>
+MAINTAINER myontars <myontar@w3ic.org>
 
 # Specially for SSH access and port redirection
 ENV ROOTPASSWORD android
