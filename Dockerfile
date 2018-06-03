@@ -63,5 +63,6 @@ ENV NOTVISIBLE "in users profile"
 
 # Add entrypoint
 ADD entrypoint.sh /entrypoint.sh
+ADD config.ini /config.ini
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
