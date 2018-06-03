@@ -40,4 +40,5 @@ if [ ! -f ~/.android/avd/test.ini ]; then
 else
    echo "AVD HAS EXISTS RUNING!"
 fi
+cp config.ini ~/.android/avd/test.avd/config.ini
 echo "no" | /usr/local/android-sdk/tools/emulator64-${EMU} -avd test -noaudio -no-window -gpu off -verbose -qemu -usbdevice tablet -vnc :0
